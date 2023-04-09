@@ -8,7 +8,7 @@ const router = express.Router()
 var header = {
   name: {
     firstname: 'Ivan',
-    lastname: 'Ivanov', 
+    lastname: 'Ivanov',
   },
   position: 'Junior Fullstack JS Developer',
   salary: '600$ в місяць',
@@ -16,21 +16,21 @@ var header = {
 }
 
 var footer = {
-    social: {
-      email: {
-        text: 'ivanov@mail.com',
-        href: 'mailto:ivanov@mail.com',
-      },
-      phone: {
-        text: '+380670000123',
-        href: 'tel:+380670000123',
-      },
-      linkedin: {
-        text: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/dmytro-test',
-      },
+  social: {
+    email: {
+      text: 'ivanov@mail.com',
+      href: 'mailto:ivanov@mail.com',
     },
-  }
+    phone: {
+      text: '+380670000123',
+      href: 'tel:+380670000123',
+    },
+    linkedin: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+  },
+}
 
 // ================================================================
 
@@ -59,7 +59,6 @@ router.get('/summary', function (req, res) {
 
     header,
 
-
     main: {
       summary: {
         title: 'Summary',
@@ -67,7 +66,7 @@ router.get('/summary', function (req, res) {
         Whenever I start to work on a new project I learn the domain and try to understand the
         idea of the project. Good team player, every colleague is a friend to me.`,
       },
-  
+
       experience: {
         title: 'Other experience',
         text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport
@@ -78,8 +77,6 @@ router.get('/summary', function (req, res) {
     },
 
     footer,
-
-    
   })
 })
 
@@ -94,66 +91,64 @@ router.get('/skills', function (req, res) {
     page: {
       title: 'Resume | Skills',
     },
-    
+
     header,
 
     main: {
-      skills: [ {
-        name: 'HTML',
-        point: 10,
-        isTop: true,
-      },
-      
-      {
-        name: 'Hendelbars',
-        point: 9,
-      },
+      skills: [
+        {
+          name: 'HTML',
+          point: 10,
+          isTop: true,
+        },
 
-      {
-        name: 'VS Code & NPM',
-        point: 10,
-        isTop: true,
-      },
+        {
+          name: 'Hendelbars',
+          point: 9,
+        },
 
-      {
-        name: 'Git & Terminal',
-        point: 8,
-        isTop: false,
-      },
+        {
+          name: 'VS Code & NPM',
+          point: 10,
+          isTop: true,
+        },
 
-      {
-        name: 'React.js',
-        point: 0,
-      },
+        {
+          name: 'Git & Terminal',
+          point: 8,
+          isTop: false,
+        },
 
-      {
-        name: 'PHP',
-        point: null,
-      },
+        {
+          name: 'React.js',
+          point: 0,
+        },
 
+        {
+          name: 'PHP',
+          point: null,
+        },
       ],
 
       hobbies: [
         {
           name: 'Активний відпочинок',
-          isMain: true
+          isMain: true,
         },
 
         {
           name: 'Спорт',
-          isMain: true
+          isMain: true,
         },
 
         {
           name: 'Музика',
-          isMain: false
+          isMain: false,
         },
       ],
     },
 
-      footer, 
-
-    
+    footer,
   })
 })
 
@@ -168,11 +163,11 @@ router.get('/education', function (req, res) {
     page: {
       title: 'Resume | Education',
     },
-    
+
     header,
 
     main: {
-       education: [
+      education: [
         {
           name: 'Інститут',
           isEnd: true,
@@ -181,34 +176,33 @@ router.get('/education', function (req, res) {
         {
           name: 'Технікум',
           isEnd: false,
-       },
+        },
 
-       {
-        name: 'Училище',
-        isEnd: true,
-     },
-    
-    ],
+        {
+          name: 'Училище',
+          isEnd: true,
+        },
+      ],
 
       certificates: [
         {
           name: 'Diplome_1',
-          id: 15
+          id: 15,
         },
 
         {
           name: 'Diplome_2',
-          id: 20
+          id: 20,
         },
 
         {
           name: 'Diplome_3',
-          id: 25
+          id: 25,
         },
       ],
-  },
-     footer, 
-})
+    },
+    footer,
+  })
 })
 
 // ================================================================
@@ -224,7 +218,7 @@ router.get('/work', function (req, res) {
     page: {
       title: 'Resume | Work',
     },
-    
+
     header,
 
     main: {
@@ -242,22 +236,24 @@ router.get('/work', function (req, res) {
           },
           projectAmount: 3,
 
-          projects: [{
+          projects: [
+            {
               name: 'Resume',
               url: 'https://resume.com.ua',
-              about: 'Render view with the given options and optional callback ',
+              about:
+                'Render view with the given options and optional callback ',
               stacks: [
                 {
-                name: 'React.js',
-               },
-               {
-                name: 'HTML / CSS',
-               },
-               {
-                name: 'Node.js',
-               },
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML / CSS',
+                },
+                {
+                  name: 'Node.js',
+                },
               ],
-               awards: [
+              awards: [
                 {
                   name: 'Cache boolean hinting to the engine it should cache',
                 },
@@ -265,18 +261,118 @@ router.get('/work', function (req, res) {
                   name: 'Hinting to the engine',
                 },
               ],
-                stackAmount: 3,
-                awardAmount: 2,
-          },
-        ],
-       },
+              stackAmount: 3,
+              awardAmount: 2,
+            },
+          ],
+        },
+      ],
+    },
+    footer,
+  })
+})
+// ================================================================
 
-    ],
-       
-  },
-     footer, 
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/person', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('person', {
+    layout: 'person',
+
+    person: {
+      name: 'Emma Johnson',
+      age: 32,
+      gender: 'Female',
+      address: {
+        street: '123 Main St',
+        city: 'New York',
+        state: 'NY',
+        zip: '10001',
+        country: 'USA',
+      },
+      education: [
+        {
+          degree: 'Bachelor of Science',
+          major: 'Computer Science',
+          university:
+            'Massachusetts Institute of Technology',
+          graduationYear: 2012,
+        },
+      ],
+      workExperience: [
+        {
+          company: 'Google',
+          title: 'Software Engineer',
+          startDate: '2012-06-01',
+          endDate: '2016-12-31',
+          responsibilities: [
+            'Developed new features for Google Maps',
+            'Worked on improving search algorithms',
+          ],
+          year_founded: 1990,
+          industry: 'Technology',
+          employees: [
+            {
+              name: 'John Smith',
+              position: 'CEO',
+              department: 'Executive',
+              projects: [
+                {
+                  name: 'Project Alpha',
+                  description:
+                    'Developing new software platform',
+                  status: 'In Progress',
+                  teams: [
+                    {
+                      team_name: 'Awesome Team',
+                      team_leader: {
+                        name: 'John Smith',
+                        title: 'Team Leader',
+                        email: 'john.smith@example.com',
+                      },
+                      team_members: [
+                        {
+                          name: 'Alice Johnson',
+                          title: 'Software Engineer',
+                          email:
+                            'alice.johnson@example.com',
+                          skills: ['Java', 'Python', 'SQL'],
+                          projects: [
+                            {
+                              name: 'Project A',
+                              description:
+                                'Lorem ipsum dolor sit amet',
+                              technologies: [
+                                'Java',
+                                'Spring Framework',
+                              ],
+                              team_members: [
+                                {
+                                  name: 'Bob Lee',
+                                  title:
+                                    'Software Engineer',
+                                },
+                                {
+                                  name: 'Cindy Chen',
+                                  title: 'UI Designer',
+                                },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  })
 })
-})
+
 // ================================================================
 
 // Підключаємо роутер до бек-енду
