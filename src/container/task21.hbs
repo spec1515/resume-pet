@@ -1,0 +1,186 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+
+  <div class='card'>
+    <div class='card-body'>
+
+      <div>
+
+        {{#with heading}}
+
+          <div class='card'>
+            <div class='card-body'>
+              <h1>Heading</h1>
+              {{#with main}}
+                <div class='text-secondary'>{{title}}
+                  <p>{{text}}</p></div>
+                {{#with button_text}}
+                  <div><button
+                      class='btn btn-primary'
+                    >{{solid}}</button></div>
+                  <br />
+                  <div><button
+                      class='btn btn-outline-primary'
+                    >{{outline}}</button></div>
+                {{/with}}
+              {{/with}}
+
+            </div>
+
+          </div>
+          <br />
+          <br />
+
+          <div class='card'>
+            <div class='card-body'>
+              <h2>Second</h2>
+
+              {{#with second}}
+                <div class='text-secondary'>{{title}}
+                  <p>{{text}}</p></div>
+                {{#with button_text}}
+                  <div><button
+                      class='btn btn-secondary'
+                    >{{solid}}</button></div>
+                  <br />
+                  <div><button
+                      class='btn btn-outline-secondary'
+                    >{{outline}}</button></div>
+                {{/with}}
+              {{/with}}
+
+            </div>
+
+          </div>
+          <br />
+          <br />
+
+          <div class='card'>
+            <div class='card-body'>
+              <h3>Subblock</h3>
+
+              {{#with subblock}}
+                <div class='text-secondary'>{{title}}
+                  <p>{{text}}</p></div>
+                {{#with button_text}}
+                  <div><button
+                      class='btn btn-dark'
+                    >{{solid}}</button></div>
+                  <br />
+                  <div><button
+                      class='btn btn-outline-dark'
+                    >{{outline}}</button></div>
+                {{/with}}
+              {{/with}}
+
+            </div>
+
+          </div>
+          <br />
+          <br />
+
+        {{/with}}
+
+      </div>
+
+      <div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <br />
+  <br />
+
+  <div class='card'>
+    <div class='card-body'>
+      {{#with nested_display}}
+        <div>
+          <strong class='display-1'>
+            {{title}}</strong>
+        </div>
+        <br />
+
+        <div class='card'>
+          <div class='card-body'>
+
+            {{#with children_display}}
+              <div class='display-4'>{{title}}</div>
+              <br />
+              <p>{{text}}</p>
+
+              {{#with button}}
+                <button
+                  class='btn btn-outline-warning'
+                >{{text}}</button>
+              {{/with}}
+
+            {{/with}}
+
+          </div>
+
+        </div>
+        <br />
+
+        <div>
+          <h6 class='text-dark'>{{header_text}}</h6>
+          {{#with button}}
+            <div><button
+                class='btn btn-info'
+              >{{text}}</button></div>
+          {{/with}}
+        </div>
+
+      {{/with}}
+
+    </div>
+
+  </div>
+
+  <br />
+  <br />
+
+  <div class='card'>
+    <div class='card-body'>
+
+      {{#with paragraph}}
+        <p class='display-6'>{{title}}</p>
+        <p>{{text}}</p>
+
+        {{#with button}}
+          <button class='btn btn-link'><a
+              href='{{url}}'
+            >{{text}}</a></button>
+        {{/with}}
+
+        <div class='card'>
+          <div class='card-body'>
+
+            {{#each list_name}}
+              <ul>
+                <li><button class='btn btn-link'><a
+                      href='{{url}}'
+                    >{{text}}</a></button></li>
+              </ul>
+            {{/each}}
+
+          </div>
+        </div>
+
+      {{/with}}
+
+    </div>
+  </div>
+
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
