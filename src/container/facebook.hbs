@@ -19,62 +19,71 @@
         <li>age: {{age}}</li>
       </ul>
 
-      <div>
-        {{#each friends}}
+      {{#each friends}}
+        <strong class='text-bg-secondary'>friends:</strong>
+        <ul>
+          <li>id: {{id}}</li>
+          <li>name: {{name}}</li>
+          <li>gender: {{gender}}</li>
+          <li>age: {{age}}</li>
+        </ul>
+
+        <div>
           <strong
-            class='text-bg-secondary'
-          >friends:</strong>
-          <ul>
-            <li>id: {{id}}</li>
-            <li>name: {{name}}</li>
-            <li>gender: {{gender}}</li>
-            <li>age: {{age}}</li>
-          </ul>
+            class='text-bg-info'
+          >mutual_friends:</strong>
+          {{#each mutual_friends}}
 
-          <div>
-            {{#each mutual_friends}}
-              <strong
-                class='text-bg-info'
-              >mutual_friends:</strong>
-              <ul>
-                <li>id: {{id}}</li>
-                <li>name: {{name}}</li>
-                <li>gender: {{gender}}</li>
-                <li>age: {{age}}</li>
-              </ul>
+            <ul>
+              <li>id: {{id}}</li>
+              <li>name: {{name}}</li>
+              <li>gender: {{gender}}</li>
+              <li>age: {{age}}</li>
 
-            {{/each}}
-          </div>
+              {{#each mutual_friends}}
 
-        {{/each}}
-      </div>
+                <ul>
+                  <li>id: {{id}}</li>
+                  <li>name: {{name}}</li>
+                  <li>gender: {{gender}}</li>
+                  <li>age: {{age}}</li>
+                </ul>
+              {{/each}}
 
-      <div>
-        {{#each groups}}
-          <strong class='text-bg-warning'>groups:</strong>
-          <ul>
-            <li>id: {{id}}</li>
-            <li>name: {{name}}</li>
-            <li>description: {{description}}</li>
-          </ul>
+            </ul>
 
-          <div>
-            {{#each members}}
+          {{/each}}
+        </div>
+        <br />
+        <div>
+          {{#each groups}}
+            <strong class='text-bg-warning'>groups:</strong>
+            <ul>
+              <li>id: {{id}}</li>
+              <li>name: {{name}}</li>
+              <li>description: {{description}}</li>
+            </ul>
+
+            <div>
               <strong
                 class='text-bg-danger'
               >members:</strong>
-              <ul>
-                <li>id: {{id}}</li>
-                <li>name: {{name}}</li>
-                <li>gender: {{gender}}</li>
-                <li>age: {{age}}</li>
-              </ul>
+              {{#each members}}
 
-            {{/each}}
-          </div>
+                <ul>
+                  <li>id: {{id}}</li>
+                  <li>name: {{name}}</li>
+                  <li>gender: {{gender}}</li>
+                  <li>age: {{age}}</li>
+                </ul>
 
-        {{/each}}
-      </div>
+              {{/each}}
+            </div>
+
+          {{/each}}
+        </div>
+
+      {{/each}}
 
     {{/each}}
   </div>
