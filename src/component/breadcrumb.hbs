@@ -1,0 +1,13 @@
+<div class='breadcrumb mb-4'>
+  {{#each breadcrumb}}
+    {{#if url}}
+      <div class='breadcrumb-item'>
+        <a href='{{url}}'>{{name}}</a>
+      </div>
+    {{else}}
+      <div class='breadcrumb-item'>
+        {{name}}
+      </div>
+    {{/if}}
+  {{/each}}
+</div>

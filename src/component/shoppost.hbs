@@ -1,0 +1,39 @@
+{{#with newsOtherBlock}}
+  <div class='text-center'>
+    <strong class='display-3'>{{title}}</strong>
+  </div>
+  <div class='row'>
+    {{#each cards}}
+      <div class='col-3 gy-3'>
+        <div class='card text-bg-dark'>
+          <div class='card-body'>
+            <div class='card-title'>
+              <strong>
+                {{title}}
+                {{#if isTop}}
+                  <span
+                    class='badge text-bg-danger rounded-pill'
+                  >
+                    Топ
+                  </span>
+                {{/if}}
+                {{#if idNew}}
+                  <span
+                    class='badge text-bg-success rounded-pill'
+                  >
+                    Нова
+                  </span>
+                {{/if}}
+              </strong>
+            </div>
+            <div>
+              <p>{{description}}</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    {{/each}}
+  </div>
+{{/with}}
