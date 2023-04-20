@@ -691,11 +691,12 @@ router.get('/web', function (req, res) {
 // ================================================================
 
 
-router.get('/shophome', function (req, res) {
+router.get('/shopproduct', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('shophome', {
+  res.render('shopproduct', {
+
     layout: 'shop',
     navigation: {
       links: [
@@ -713,6 +714,61 @@ router.get('/shophome', function (req, res) {
         },
       ],
     },
+
+
+    breadcrumb: [
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'PC', url: 'https://www.google.com/' },
+      { name: 'Windows', url: 'https://github.com/' },
+      { name: 'Product PC #3123', url: null },
+    ],
+
+    productData: {
+      img: 'https://picsum.photos/400/200',
+
+      info: {
+        title: 'Product PC Asus 331 BC 671',
+        about:
+          "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        price: '1000$',
+
+        category: [
+          { name: 'HOT', isHot: true },
+          { name: 'New', isNew: true },
+          { name: 'Bonus', isBonus: true },
+        ],
+      },
+
+      actionList: [
+        { name: 'Buy', isWarning: true },
+        { name: 'Add to cart', isError: true },
+        { name: 'Like', isSuccess: true },
+        { name: 'Share', isGood: true },
+      ],
+
+      item: {
+        head: ['#', 'color', 'price'],
+
+        body: [
+          ['id312', 'red', '1100$'],
+          ['id532', 'blue', '1050$'],
+          ['id643', 'dark', '999$'],
+        ],
+      },
+
+      param: {
+        title: 'Product params',
+        list: ['Экран 15.6', 'IPS (1920x1080)', 'Full HD'],
+      },
+
+      alert: {
+        isError: true,
+        text: 'Danger! This is a danger alert — check it out!',
+      },
+    },
+
+    goodsOtherBlock: {
+      title: 'See other products',
 
     newsBlock: {
       title: 'Latest News',
@@ -803,6 +859,7 @@ router.get('/shophome', function (req, res) {
           text: 'Toys & Games',
         },
       ],
+
       cards: [
         {
           image: 'https://picsum.photos/400/200',
@@ -810,15 +867,18 @@ router.get('/shophome', function (req, res) {
           description:
             'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
           isHot: false,
-          isNew: false,
-        },
+
+          idNew: false,
+
         {
           image: 'https://picsum.photos/400/200',
           title: 'MacBook Pro',
           description:
             "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
           isHot: true,
-          isNew: false,
+
+          idNew: false,
+
         },
         {
           image: 'https://picsum.photos/400/200',
@@ -826,6 +886,13 @@ router.get('/shophome', function (req, res) {
           description:
             "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
           isHot: false,
+
+          idNew: false,
+        },
+      ],
+    },
+
+
           isNew: false,
         },
         {
@@ -869,6 +936,7 @@ router.get('/shophome', function (req, res) {
         },
       ],
     },
+
     service: {
       title: 'Our Services',
       description:
@@ -877,6 +945,9 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Show More',
           link: 'https://www.youtube.com/',
+
+          rel: 'show-more',
+
         },
       ],
     },
@@ -973,6 +1044,8 @@ router.get('/shophome', function (req, res) {
         },
       ],
     ],
+
+
 // ================================================================
 
 router.get('/facebook', function (req, res) {
@@ -1516,6 +1589,7 @@ router.get('/task22', function (req, res) {
 
 
 
+
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
@@ -1779,6 +1853,7 @@ router.get('/task31', function (req, res) {
 })
 
 // ================================================================
+
 
 
 
