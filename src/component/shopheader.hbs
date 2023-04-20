@@ -1,33 +1,34 @@
-{{#with navigation}}
-  <div class='card'>
-    <div class='row'>
+<div class='card'>
+  <div class='row'>
+    {{#with navigation}}
+
       <div class='col-4'>
         <div class='m-3'><strong>Logo</strong></div>
       </div>
-      <div class='col-1'>
+      <div class='col-2'>
       </div>
-      <div class='col-7'>
+      <div class='col-6'>
         <div class='nav ms-4 mt-1'>
           {{#each links}}
             <div class='nav-item'>
-              <a
-                href='{{href}}'
-                class='nav-link'
-              >{{text}}</a>
+              {{#if href}}
+                <a
+                  href='{{href}}'
+                  class='nav-link'
+                >{{text}}</a>
+              {{else}}
+                <a
+                  href='{{href}}'
+                  class='nav-link disabled'
+                >{{text}}</a>
+              {{/if}}
             </div>
           {{/each}}
-
-          <div class='nav-item'>
-            <a
-              href='#'
-              class='nav-link disabled'
-            >Disabled</a>
-          </div>
 
         </div>
       </div>
 
-    </div>
-
+    {{/with}}
   </div>
-{{/with}}
+
+</div>
