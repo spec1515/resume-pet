@@ -1,0 +1,102 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <h1 class='display-1 text-dark'>{{name}}</h1>
+</div>
+
+<div>
+  <ul>
+    <li>{{description}}</li>
+    <br />
+    <li>
+      <strong class='text-primary'>history:</strong>
+      {{#with history}}
+        <ul>
+          <li><time
+              class='text-secondary text-bg-warning'
+            >{{year}}</time></li>
+          <li>{{founder}}</li>
+        </ul>
+      {{/with}}
+    </li>
+  </ul>
+
+  <strong class='text-dark'>types:</strong>
+  {{#each types}}
+    <ul>
+      <li class='btn btn-link'>{{this}}</li>
+    </ul>
+  {{/each}}
+
+  <strong
+    class='text-success text-bg-warning'
+  >syntax:</strong>
+  {{#with syntax}}
+    <br />
+    <strong>variables:</strong>
+    {{#each variables}}
+      {{this}},
+    {{/each}}
+    <br />
+
+    <strong>functions:</strong>
+    {{#each functions}}
+      {{this}}
+    {{/each}}
+    <br />
+
+    <strong>loops:</strong>
+    {{#each loops}}
+      {{this}},
+    {{/each}}
+    <br />
+
+    <strong>classes:</strong>
+    {{#each classes}}
+      {{this}}
+    {{/each}}
+    <br />
+
+  {{/with}}
+  <br />
+  <strong class='text-bg-primary'>features:</strong>
+  {{#each features}}
+    <ul>
+      <li class='text-success'>{{this}}</li>
+    </ul>
+  {{/each}}
+  <br />
+
+  <strong class='text-bg-primary'>libraries:</strong>
+  {{#each libraries}}
+    <ul>
+      <li class='text-success'>{{this}}</li>
+    </ul>
+  {{/each}}
+  <br />
+
+  <strong class='text-bg-warning'>tools:</strong>
+  {{#each tools}}
+    <ul>
+      <li class='text-info'>{{this}}</li>
+    </ul>
+  {{/each}}
+  <br />
+
+  <strong>community:</strong>
+  {{#each community}}
+    <ul>
+      <li class='btn btn-link'>{{name}}</li>
+      <li>{{type}}</li>
+    </ul>
+  {{/each}}
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
