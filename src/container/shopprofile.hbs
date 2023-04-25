@@ -1,0 +1,65 @@
+<main>
+  <div class='my-5'>
+    <h1>{{header}}</h1>
+  </div>
+
+  {{#with purchase}}
+    <div class='nav nav-tabs'>
+      {{#each tabs}}
+
+        <div class='nav-item'>
+          {{#if @first}}
+            <a href='#' class='nav-link active'>{{this}}</a>
+          {{else}}
+            <a href='#' class='nav-link'>{{this}}</a>
+          {{/if}}
+
+        </div>
+
+      {{/each}}
+
+    </div>
+
+    <div class='my-4'>
+      <div class='row'>
+
+        {{#with actionBlock}}
+          {{#with input}}
+            <div class='col-4'>
+              <input
+                class='form-control'
+                placeholder='{{placeholder}}'
+              />
+            </div>
+          {{/with}}
+
+          <div class='col-8'>
+            {{#each buttons}}
+              {{#if isSuccess}}
+                <button
+                  class='btn btn-success mx-1'
+                >{{text}}</button>
+              {{/if}}
+              {{#if isOutline}}
+                <button
+                  class='btn btn-outline-success mx-1'
+                >{{text}}</button>
+              {{/if}}
+              {{#if isDanger}}
+                <button
+                  class='btn btn-outline-danger mx-1'
+                >{{text}}</button>
+              {{/if}}
+
+            {{/each}}
+          </div>
+
+        {{/with}}
+
+      </div>
+    </div>
+    <hr />
+
+  {{/with}}
+
+</main>
